@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>It's special for Reza</title>
+	<audio src="iloveyou.mp3" controls autoplay></audio>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">Hai!</span><br/>
+			<span class="comments">Sebelumnya maaf kalau seadanya xixi</span><br/>
+			<span class="comments">Kamu disana baik kan yaa?</span><br/>
+			<span class="comments">Harus dong, gaboleh enggak</span><br/>
+			<span class="comments">Aku buat ini udah lama sih sebenernya</span><br/>
+			<span class="comments">Gabut?</span><br/>
+			Uhmm yaa enggaklah woy<br/>
+			<span class="comments">Ga nyangka juga sih bisa sejauh ini, dari awalnya iseng doang</span><br/>
+			<span class="comments">Tapi serius Reza, aku gak ada niatan buat pacaran lagi karena masih sakit banget</span><br/>
+			<span class="comments">Apalagi waktu aku tau kamu bocil dan kita sejauh itu</span><br/>
+			<span class="comments">Walau begitu, kamu berhasil tau gak?</span><br/>
+			<span class="comments">Iya berhasil.</span><br/>
+			<span class="comments">I'm fallin' in love with you sooo badly</span><br/>
+			<span class="comments">Aku tau sih, aku gak sepenting itu</span><br/>
+			<span class="comments">Dan akhir-akhir ini kamu juga berubah. banget.</span><br/>
+			<span class="comments">Yaa tau sih kalau ini pasti bakal kejadian juga</span><br/>
+			<span class="comments">Namun harapanku, kalau pergi pamit ya?</span><br/>
+			<span class="comments">Jangan ngilang gitu aja, atau bahkan sampai main di belakang</span><br/>
+			<span class="comments">Lebih baik kamu jujur ke aku, pasti kuterima</span><br/>
+			<span class="comments">Maaf ya, aku sering marah-marah gak jelas</span><br/>
+			<span class="comments">Tapi semarah atau sengambek apapun aku, gabakal ninggal kamu gitu ajaa</span><br/>
+			<span class="comments">Terima kasih sudah hadir Reza</span><br/>
+			<span class="comments">I love you.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Reza, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					I love you till I lost my control.<br/>
+					<div class="signature">- Aisyah </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		by icaa
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2023, 1, 6);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
